@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>橙色系商城购物模板首页</title>
+	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<meta content="telephone=no" name="format-detection" />
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<section class="jqui-flexView">
+	<section class="jqui-scrollView">
+		<iframe src="index1.html" class="jqui-scrollView" style="border: none;" name="content"></iframe>
+	</section>
+	<footer class="jqui-footer jqui-footer-fixed">
+		<a href="index1.html" class="jqui-tabBar-item jqui-tabBar-item-active" target="content">
+                <span class="jqui-tabBar-item-icon">
+                    <i class="icon icon-loan"></i>
+                </span>
+			<span class="jqui-tabBar-item-text">首页</span>
+		</a>
+		<a href="G:\dangyou\appshptmoban\index.html" class="jqui-tabBar-item " target="content">
+                <span class="jqui-tabBar-item-icon">
+                    <i class="icon icon-credit "></i>
+                </span>
+			<span class="jqui-tabBar-item-text">分类</span>
+		</a>
+		<a href="G:\dangyou\appyhjmoban\index.html" class="jqui-tabBar-item " target="content">
+                <span class="jqui-tabBar-item-icon">
+                    <i class="icon icon-ions"></i>
+                </span>
+			<span class="jqui-tabBar-item-text">福利</span>
+		</a>
+
+		<a href="G:/dangyou/jQueryGoodsCart/index.html" class="jqui-tabBar-item " target="content">
+                <span class="jqui-tabBar-item-icon">
+                    <i class="icon icon-mine"></i>
+                </span>
+			<span class="jqui-tabBar-item-text">购物车</span>
+		</a>
+		<a href="G:\dangyou\appgrzx\index.html" class="jqui-tabBar-item " target="content">
+                <span class="jqui-tabBar-item-icon">
+                    <i class="icon icon-my"></i>
+                </span>
+			<span class="jqui-tabBar-item-text">我的</span>
+		</a>
+	</footer>
+</section>
+</body>
+
+<script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="js/slider.js"></script>
+<script type="text/javascript">
+	function b() {
+		t = parseInt(x.css('top'));
+		y.css('top', '20px');
+		x.animate({
+			top: t - 20 + 'px'
+		}, 'slow');
+		if (Math.abs(t) == h - 20) {
+			y.animate({
+				top: '0px'
+			}, 'slow');
+			z = x;
+			x = y;
+			y = z;
+		}
+		setTimeout(b, 3000);
+	}
+	$(document).ready(function() {
+		$('.swap').html($('.news_li').html());
+		x = $('.news_li');
+		y = $('.swap');
+		h = $('.news_li li').length * 20;
+		setTimeout(b, 3000);
+		
+		//底部导航点击事件
+		$("footer a").click(function(){
+			var t = $(this);
+			if(!t.hasClass("jqui-tabBar-item-active")){
+				$("footer a").removeClass("jqui-tabBar-item-active");
+				t.addClass("jqui-tabBar-item-active");
+			}
+		})
+	})
+</script>
+
+</html>
